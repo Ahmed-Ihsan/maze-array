@@ -66,25 +66,25 @@ int main(int argc, char *argv[])
 	}
 
 	cout << "_______________________________" << endl;
-/*	for (int i = 0; i < h; i++)
+	for (int i = 0; i < h; i++)
 	{
 		for (int j = 0; j < w; j++)
 		{
 			cout << "a2[" << j << "][" << i << "]= " << a2[j][i] << endl;
 		}
-	}*/
+	}
 
 	cout << "_______________________________" << endl;
 	for (int i = 0; i < h; i++)
 	{
-	/*	for (int j = 0; j < w; j++)
+		for (int j = 0; j < w; j++)
 		{
 			if (a2[j][i] < 10)
 				cout << a2[j][i] << "    ";
 			else
 				cout << a2[j][i] << "   ";
 		}
-		cout << endl;*/
+		cout << endl;
 	}
 
 	cout << "_______________________________" << endl;
