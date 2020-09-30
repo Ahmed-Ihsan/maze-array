@@ -1,5 +1,5 @@
-#include <iostream>
-#include<stdio.h>
+#include<iostream>
+
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
-	
+
 	cout << "_______________________________" << endl;
 	for (int i = 0; i < h; i++)
 	{
@@ -98,8 +98,8 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
-	p=24;
-	cout << "p= " << p << endl;
+	p=9;
+	cout << "p1= " << p << endl;
 	cout << "_______________________________" << endl;
 	for (int i = 0; i < h; i++)
 	{
@@ -107,50 +107,104 @@ int main(int argc, char *argv[])
 		{
 			a2[j][i] = p - a2[j][i];
 			if (a2[j][i] < 0)
-				a2[j][i]*=-1;
+				a2[j][i]*=1;
 			cout << a2[j][i] << "   ";
 		}
 		cout << endl;
 	}
 	cout << "_______________________________" << endl;
 	int g = 0, o = 0;
-	for (int x = 0; a[g][o] !=0; x++)
-	{
-		if (g==o && g==0){
+	for (int x = 0; x<101 ; x++)
+	{		
+	
 			a2[g][o]=22;
-			if(a2[g][o+1]<=a2[g+1][o] && a2[g][o+1]!=-1)
+			if(a2[g][o+1]==0){
+				a2[g][o+1]=323;
+				break;
+			}
+			if(a2[g+1][o]==0){
+				a2[g+1][o]=323;
+				break;
+			}
+		if (g==o && g==0){
+			if(a2[g][o+1]==0 || a2[g+1][o]==0){
+				a2[g][o+1]=323;
+				break;
+			}
+				
+			if(a2[g][o+1]<=a2[g+1][o] && a2[g][o+1]!=0 && a2[g][o+1]>0)
 			{
 				a2[g][o+1]=22;
 				o++;
-				printf("%i \n",o);
+				cout<<2<<endl;
+				cout<<o<<endl;
 			}
-			else 
-			if(a2[g+1][o]<=a2[g][o+1] && a2[g+1][o]!=-1)
+			else
+			if(a2[g+1][o]<=a2[g][o+1] && a2[g][o+1]!=0 && a2[g][o+1]>0)
 			{
 				a2[g+1][o]=22;
 				g++;
-				printf("%i \n",g);
+				cout<<g<<endl;
 			}
 		}
-		
-		if ( g!=w){
-			if(a2[g+1][o]<=a2[g][o+1] && a2[g+1][o]!=-1)
+
+		if (g!=w){
+			if(a2[g][o+1]==0){
+				a2[g][o+1]=323;
+				break;
+			}
+			if(a2[g+1][o]==0){
+				a2[g+1][o]=323;
+				break;
+			}
+			if(a2[g+1][o]<=a2[g][o+1] && a2[g][o+1]!=0 && a2[g][o+1]>0)
 			{
 				a2[g+1][o]=22;
 				g++;
-				printf("%i \n",g);
+				cout<<g<<endl;
 			}
+			else
+			if(a2[g][o+1]<=a2[g+1][o] && a2[g][o+1]!=0 && a2[g][o+1]>0)
+			{
+				a2[g][o+1]=22;
+				o++;
+				cout<<o<<endl;
+			}
+			else
+				if(a2[g+1][o]!=0 && a2[g+1][o]>0 && a2[g][o+1]!=0)
+		{
+			a2[g+1][o]=22;
+			g++;
+			cout<<o<<endl;	
+		}
+			
 		}
 		else
-		if ( o!=h){
-			if(a2[g][o+1]<=a2[g+1][o] && a2[g][o+1]!=-1)
+		if (o!=h){
+			if(a2[g][o+1]==0){
+				a2[g][o+1]=323;
+				break;
+			}
+			if(a2[g+1][o]==0){
+				a2[g+1][o]=323;
+				break;
+			}
+			if(a2[g][o+1]<=a2[g+1][o] && a2[g][o+1]!=0 && a2[g][o+1]>0)
 			{
 				a2[g][o+1]=22;
 				o++;
-				printf("%i \n",o);
+				cout<<o<<endl;
 			}
+			else
+				if(a2[g+1][o]!=0 && a2[g+1][o]>0 && a2[g][o+1]!=0)
+		{
+			a2[g+1][o]=22;
+			g++;
+			cout<<o<<endl;	
+		}
 		}
 		
+	
 	}
 
 	cout << "_______________________________" << endl;
