@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+cout<<"----------- 2021/2/13 ----------"<<endl;
+cout<<"------ Uses leaner search ------"<<endl<<endl<<endl;
+// size arry 5 item
+char word[20];
+char res[20];
+int x=0;
+// input word
+cout<<"The Maxmim number of characters 20"<<endl;
+cout<<"Enter the number of characters"<<endl;
+cin>>x;
+// ( x<=0 OR x>20 ) == True
+while( x<=0 || x>20 ){
+	if(x=0){
+		cout<<"Errer not  found the number of characters"<<endl;
+		cout<<"Enter the number of characters"<<endl;
+		cin>>x;
+	}
+	else if (x>20){
+		cout<<"Errer you exceeded the limit"<<endl;
+		cout<<"Enter the number of characters"<<endl;
+		cin>>x;
+	}
+	else{
+        cout<<"Errer the number semaller than one"<<endl;
+		cout<<"Enter the number of characters"<<endl;
+		cin>>x;
+	}
+}
+cout<<"Enter the characters"<<endl;
+for (int i=0 ; i<x ; i++){
+    // word[n-1]
+    cin>> word[i];
+}
+for (int i=0 ; i<x ; i++){
+
+    for(int j=0 ; j<x ; j++){
+        if(word[i]>word[j]){
+            res[i] = word[i];
+            word[i]=word[j];
+            word[j]=res[i];
+        }
+        else{
+            cout<<'-';
+        }
+    }
+}
+cout<<endl;
+for (int i=x-1 ; i>=0 ; i--){
+    cout<<","<<word[i];
+}
+cout<<endl<<"Done "<<endl;
+
+}
