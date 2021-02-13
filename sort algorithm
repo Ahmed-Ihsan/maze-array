@@ -1,0 +1,63 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+
+cout<<"--- zain Al-abidin ihasn ali ---"<<endl;
+cout<<"----------- 2021/2/13 ----------"<<endl;
+cout<<"------ Uses leaner search ------"<<endl<<endl<<endl;
+
+//  maximum limit 20
+//  minimum limit 1
+
+std::vector<string> c;
+string r[20];
+int x;
+
+
+// input word
+        cout<<"The maximum number of words 20"<<endl;
+        cout<<"The minimum number of words 2"<<endl;
+        cout<<"Enter the number of words"<<endl;
+        cin>>x;
+// ( x<=0 OR x>20 ) == True
+while( x<=1 || x>20 ){
+   if(x>20){
+		cout<<"Errer: you exceeded the maximum limit "<<endl;
+		cout<<"Enter the number of words"<<endl;
+		cin>>x;
+	}
+   else if(x<=1) {
+        cout<<"Errer: you exceeded the minimum limit "<<endl;
+		cout<<"Enter the number of words"<<endl;
+		cin>>x;
+	}
+
+}
+        cout<<"Enter the words"<<endl;
+
+for(int i=0 ; i<x ; i++){
+    cin>>r[i];
+    c.push_back(r[i]);
+}
+
+for(int i=0 ; i<x ; i++){
+for(int j=0 ; j<x ; j++){
+ if(c[i]>c[j]){
+            r[i] = c[i];
+            c[i] = c[j];
+            c[j] = r[i];
+}else{
+cout<<"---- chack words ----"<<endl;
+}
+}
+}
+
+for(int i=x-1 ; i>=0 ; i--){
+        cout<<","<<c[i];
+}
+
+    cout<<endl<<"Done "<<endl;
+
+}
